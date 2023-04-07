@@ -2,12 +2,14 @@
 
 Let traditional ordinary websites have page loading progress when clicking a tag to jump pages
 
+> [preview demo](https://lete114.github.io/page-load-progress/test/index.html)
+
 ## Installation
 
-Add [page-load-progress.js](https://cdn.jsdelivr.net/npm/page-load-progress.min.js) to your project.
+Add [page-load-progress.js](https://cdn.jsdelivr.net/npm/page-load-progress/page-load-progress.min.js) to your project.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/page-load-progress.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/page-load-progress/page-load-progress.min.js"></script>
 ```
 
 Or
