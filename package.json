@@ -1,0 +1,29 @@
+{
+  "name": "page-load-progress",
+  "version": "0.0.1",
+  "description": "Listening to hyperlink loading progress",
+  "main": "page-load-progress.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lete114/page-load-progress.git"
+  },
+  "keywords": [
+    "page",
+    "load",
+    "loader",
+    "progress",
+    "progress-bar",
+    "prefetch",
+    "preload",
+    "hyperlink"
+  ],
+  "files": [
+    "page-load-progress.js"
+  ],
+  "author": "Lete114",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lete114/page-load-progress/issues"
+  },
+  "homepage": "https://github.com/Lete114/page-load-progress#readme"
+}
