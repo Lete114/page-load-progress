@@ -84,8 +84,10 @@
   var options = {}
   window.addEventListener('click', function (event) {
     var target = event.target
-    if (target instanceof Element && target.tagName === 'A') {
-      var href = target.closest('a[href]:not([target^=_]):not([download])').href
+    if (target instanceof Element) {
+      target = target.closest('a[href]:not([target^=_]):not([download])')
+      var href = target.href
+      if (target.tagName !== 'A') return
 
       var ignoreKeywords = options.ignoreKeywords || []
       for (var i = 0; i < ignoreKeywords.length; i++) {
