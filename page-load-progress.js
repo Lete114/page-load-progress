@@ -99,7 +99,9 @@
           href,
           function () {
             customEventFactory('progress:end')
-            window.open(href, '_self')
+            setTimeout(() => {
+              window.open(href, '_self')
+            }, options.defer || 500)
           },
           function () {
             customEventFactory('progress:error')
