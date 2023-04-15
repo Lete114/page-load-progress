@@ -68,23 +68,23 @@ Here's a simple example of a progress bar
 !(function () {
   var style = document.createElement('style')
   style.textContent = `
-  .progress{
-      top: 0;
-      left: 0;
-      position: fixed;
-      width: 10%;
-      height: 2px;
-      z-index: 103;
-      background-color: #e58a8a;
-      transition: width 0.4s ease 0s;
-  }`
+    .__progress__ {
+        top: 0; 
+        left: 0;
+        position: fixed;
+        width: 10%;
+        height: 2px;
+        z-index: 103;
+        background-color: #e58a8a;
+        transition: width 0.4s ease 0s;
+    }`
   document.head.appendChild(style)
 
   var timer = null
   document.addEventListener('progress:start', () => {
     var progress = 10
     var div = document.createElement('div')
-    div.className = 'progress'
+    div.className = '__progress__'
     document.body.prepend(div)
     var max = 10,
       mini = 3
@@ -94,14 +94,17 @@ Here's a simple example of a progress bar
       var randomResult = num + mini
       progress += randomResult
       if (progress > 95) progress = 95
-      document.getElementsByClassName('progress')[0].style.width = progress + '%'
+      div.style.width = progress + '%'
     }, 500)
   })
 
   document.addEventListener('progress:end', () => {
     clearInterval(timer)
-    var progress = document.getElementsByClassName('progress')
-    progress[0].style.width = '100%'
+    var progress = document.querySelector('.__progress__')
+    if (progress) progress.style.width = '100%'
+    setTimeout(() => {
+      progress.parentElement.removeChild(progress)
+    }, 500)
   })
 })()
 ```
