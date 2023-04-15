@@ -1,6 +1,6 @@
 {
   "name": "page-load-progress",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Listening to hyperlink loading progress",
   "main": "page-load-progress.js",
   "scripts": {
