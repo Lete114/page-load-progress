@@ -81,13 +81,20 @@
     )
   }
 
+  function indexHandler(params) {
+    var path = params.replace(/(\/index\.html|\/)$/gi, '')
+    if (!path.length) path = '/'
+    return path
+  }
+
   var options = {}
   window.addEventListener('click', function (event) {
     var target = event.target
     if (target instanceof Element) {
       target = target.closest('a[href]:not([target^=_]):not([download])')
       var href = target.href
-      if (target.tagName !== 'A') return
+      var isEqual = indexHandler(new URL(href).pathname) === indexHandler(location.pathname)
+      if (target.tagName !== 'A' || isEqual) return
 
       var ignoreKeywords = options.ignoreKeywords || []
       for (var i = 0; i < ignoreKeywords.length; i++) {

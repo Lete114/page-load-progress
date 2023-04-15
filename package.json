@@ -3,6 +3,9 @@
   "version": "0.0.2",
   "description": "Listening to hyperlink loading progress",
   "main": "page-load-progress.js",
+  "scripts": {
+    "serve": "serve"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Lete114/page-load-progress.git"
@@ -25,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/Lete114/page-load-progress/issues"
   },
-  "homepage": "https://github.com/Lete114/page-load-progress#readme"
+  "homepage": "https://github.com/Lete114/page-load-progress#readme",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
 }
