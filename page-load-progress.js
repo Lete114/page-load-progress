@@ -90,8 +90,7 @@
   var options = {}
   window.addEventListener('click', function (event) {
     var target = event.target
-    if (target instanceof Element) {
-      target = target.closest('a[href]:not([target^=_]):not([download])')
+    if (target instanceof Element && (target = target.closest('a[href]:not([target^=_]):not([download])'))) {
       var href = target.href
       var isEqual = indexHandler(new URL(href).pathname) === indexHandler(location.pathname)
       if (target.tagName !== 'A' || isEqual) return
