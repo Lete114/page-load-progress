@@ -7,7 +7,7 @@
       (global.pageLoadProgress = factory()))
 })(this, function () {
   'use strict'
-  // Polufill CustomEvent
+  // Polyfill CustomEvent
   ;(function () {
     try {
       new window.CustomEvent('T')
