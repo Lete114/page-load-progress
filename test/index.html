@@ -74,9 +74,15 @@
           clearInterval(timer)
           var progress = document.querySelector('.__progress__')
           if (progress) progress.style.width = '100%'
-          setTimeout(() => {
+          progress.addEventListener('transitionend', () => {
             progress.parentElement.removeChild(progress)
-          }, 500)
+          })
+        })
+
+        document.addEventListener('progress:error', () => {
+          clearInterval(timer)
+          var progress = document.querySelector('.__progress__')
+          progress.parentElement.removeChild(progress)
         })
       })()
     </script>

@@ -101,6 +101,7 @@
       }
 
       if (href && location.origin === new URL(href).origin) {
+        if (event.ctrlKey) return
         event.preventDefault()
         customEventFactory('progress:start')
         prefetch(
