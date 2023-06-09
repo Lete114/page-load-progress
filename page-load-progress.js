@@ -89,6 +89,7 @@
 
   var options = {}
   window.addEventListener('click', function (event) {
+    if (event.ctrlKey) return
     var target = event.target
     if (target instanceof Element && (target = target.closest('a[href]:not([target^=_]):not([download])'))) {
       var href = target.href
@@ -101,14 +102,13 @@
       }
 
       if (href && location.origin === new URL(href).origin) {
-        if (event.ctrlKey) return
         event.preventDefault()
         customEventFactory('progress:start')
         prefetch(
           href,
           function () {
             customEventFactory('progress:end')
-            setTimeout(() => {
+            setTimeout(function () {
               window.open(href, '_self')
             }, options.defer || 500)
           },
